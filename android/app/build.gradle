@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.stargazersviewerapp"
+    namespace "com.stargazersviewer"
     defaultConfig {
-        applicationId "com.stargazersviewerapp"
+        applicationId "com.stargazersviewer"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
