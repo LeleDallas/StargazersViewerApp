@@ -1,10 +1,10 @@
-type User = {
+export type User = {
     login: string;
     name: string | null;
     id: string;
     avatarUrl: string;
     followers: {
-        totalCount: number;
+        totalCount?: number;
     };
     hasSponsorsListing: boolean;
     isBountyHunter: boolean;
@@ -14,7 +14,7 @@ type User = {
     isGitHubStar: boolean;
     bio: string | null;
     repositories: {
-        totalCount: number;
+        totalCount?: number;
     };
 };
 
@@ -33,6 +33,14 @@ type Repository = {
     };
 }
 
+type Starred = {
+    node: {
+        login: string;
+        avatarUrl: string;
+        url: string;
+    };
+};
+
 
 
 export type UsersResponse = {
@@ -50,4 +58,12 @@ export type RepositoryResponse = {
             repositories: Repository[]
         }
     }
-} 
+}
+
+export type StarredResponse = {
+    data: {
+        node: {
+            stargazer: Starred[]
+        }
+    }
+}
