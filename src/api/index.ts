@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { getRepositories, starred, userQuery } from './model';
-import { UsersResponse } from '../types/response';
+import { RepositoryResponse, StarredResponse, UsersResponse } from '../types/response';
 
 const api = axios.create({
     baseURL: process.env.API_URL,
@@ -21,11 +21,12 @@ export default {
     repo: {
         getRepo: async (owner: string,) =>
             await api.post('/graphql', { query: getRepositories, variables: { username: owner } })
-                .then(res => res.data)
+                .then(res => (res.data as RepositoryResponse).data.user.repositories.nodes)
                 .catch(() => []),
-        getStars: async (repoId: string) =>
-            await api.post('/graphql', { query: starred, variables: { repoId } })
-                .then(res => res.data)
+        getStars: async (repoID: string) =>
+            await api.post('/graphql', { query: starred, variables: { repoID } })
+                .then(res =>
+                    (res.data as StarredResponse).data.node.stargazers.edges)
                 .catch(() => [])
     }
 };

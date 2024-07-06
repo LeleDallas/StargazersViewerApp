@@ -8,7 +8,6 @@ export type User = {
     };
     hasSponsorsListing: boolean;
     isBountyHunter: boolean;
-    isCampusExpert: boolean;
     isDeveloperProgramMember: boolean;
     isEmployee: boolean;
     isGitHubStar: boolean;
@@ -18,7 +17,8 @@ export type User = {
     };
 };
 
-type Repository = {
+export type Repository = {
+    id: string;
     name: string;
     description: string | null;
     url: string;
@@ -33,12 +33,8 @@ type Repository = {
     };
 }
 
-type Starred = {
-    node: {
-        login: string;
-        avatarUrl: string;
-        url: string;
-    };
+export type Starred = {
+    node: User;
 };
 
 
@@ -55,7 +51,9 @@ export type UsersResponse = {
 export type RepositoryResponse = {
     data: {
         user: {
-            repositories: Repository[]
+            repositories: {
+                nodes: Repository[]
+            }
         }
     }
 }
@@ -63,7 +61,9 @@ export type RepositoryResponse = {
 export type StarredResponse = {
     data: {
         node: {
-            stargazer: Starred[]
+            stargazers: {
+                edges: Starred[]
+            }
         }
     }
 }
