@@ -1,8 +1,9 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { useCallback, useRef, useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { Repository } from '../../types/response';
 import StarBottomSheet from '../StarBottomSheet';
+import { globalStyle } from '../../styles';
 type Props = {
     repository: Repository;
 }
@@ -10,7 +11,7 @@ export default (props: Props) => {
     const { repository } = props;
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
     const [repoId, setRepoId] = useState<string>('');
-    // callbacks
+
     const handlePresentModalPress = useCallback(() => {
         if (repository.stargazerCount === 0) {
             Alert.alert('No Stars', 'This repository has no stars.');
@@ -19,11 +20,11 @@ export default (props: Props) => {
             setRepoId(repository.id);
             bottomSheetModalRef.current?.present();
         }
-    }, []);
+    }, [repository.id, repository.stargazerCount]);
 
     return (
         <TouchableOpacity onPress={handlePresentModalPress} >
-            <View style={styles.trackItemContainer}>
+            <View style={globalStyle.cardContainer}>
                 <View
                     style={{
                         flex: 1,
@@ -35,17 +36,17 @@ export default (props: Props) => {
                     <View style={{ width: '100%' }}>
                         <Text
                             numberOfLines={1}
-                            style={styles.trackTitleText}
+                            style={globalStyle.cardTitleText}
                         >
                             {repository.name}
                         </Text>
-                        <Text numberOfLines={1} style={styles.trackArtistText}>
+                        <Text numberOfLines={1} style={globalStyle.cardDescription}>
                             {repository.description}
                         </Text>
-                        <Text numberOfLines={1} style={styles.bio}>
+                        <Text numberOfLines={1} style={globalStyle.bio}>
                             {repository.forkCount}
                         </Text>
-                        <Text numberOfLines={1} style={styles.bio}>
+                        <Text numberOfLines={1} style={globalStyle.bio}>
                             {repository.stargazerCount}
                         </Text>
                         <View style={{
@@ -62,54 +63,3 @@ export default (props: Props) => {
     );
 };
 
-
-const styles = StyleSheet.create({
-    trackItemContainer: {
-        flexDirection: 'row',
-        columnGap: 14,
-        alignItems: 'center',
-        paddingRight: 20,
-        backgroundColor: '#1F2429',
-        margin: 8,
-        padding: 8,
-        borderRadius: 8,
-        gap: 8,
-        borderColor: '#46515B',
-        justifyContent: 'space-around',
-        borderWidth: 1,
-        minHeight: 110
-    },
-    trackPlayingIconIndicator: {
-        position: 'absolute',
-        top: 18,
-        left: 16,
-        width: 16,
-        height: 16
-    },
-    trackPausedIndicator: {
-        position: 'absolute',
-        top: 14,
-        left: 14
-    },
-    trackArtworkImage: {
-        borderRadius: 8,
-        width: 50,
-        height: 50
-    },
-    trackTitleText: {
-        fontSize: 16,
-        color: '#fff',
-        fontWeight: '600',
-        maxWidth: '90%'
-    },
-    trackArtistText: {
-        // ...defaultStyles.text,
-        color: '#9ca3af',
-        fontSize: 14
-    },
-    bio: {
-        color: '#9ca3af',
-        fontSize: 12,
-        marginVertical: 4
-    }
-});

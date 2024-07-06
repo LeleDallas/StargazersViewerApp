@@ -5,9 +5,8 @@ export const colors = {
     background: '#24292E',
     text: '#fff',
     textMuted: '#9ca3af',
-    icon: '#fff',
-    maximumTrackTintColor: 'rgba(255,255,255,0.4)',
-    minimumTrackTintColor: 'rgba(255,255,255,0.6)'
+    buttonActive: '#117F7F',
+    buttonInactive: '#46515B'
 };
 
 export const fontSize = {
@@ -18,7 +17,7 @@ export const fontSize = {
 };
 
 
-export const commonStyle = StyleSheet.create({
+export const globalStyle = StyleSheet.create({
     background: {
         backgroundColor: colors.background,
         flex: 1
@@ -35,6 +34,12 @@ export const commonStyle = StyleSheet.create({
         flex: 1,
         textAlign: 'center'
     },
+    searchButton: {
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 8
+    },
     card: {
         backgroundColor: '#1F2429',
         margin: 8,
@@ -43,7 +48,7 @@ export const commonStyle = StyleSheet.create({
         flexDirection: 'row',
         gap: 8,
         alignItems: 'center',
-        borderColor: '#46515B',
+        borderColor: colors.buttonInactive,
         justifyContent: 'space-around',
         borderWidth: 1
     },
@@ -58,9 +63,50 @@ export const commonStyle = StyleSheet.create({
         borderRadius: 100
     },
     userInfo: {
-        // flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    cardContainer: {
+        flexDirection: 'row',
+        columnGap: 14,
+        alignItems: 'center',
+        paddingRight: 20,
+        backgroundColor: '#1F2429',
+        margin: 8,
+        padding: 8,
+        borderRadius: 8,
+        gap: 8,
+        borderColor: colors.buttonInactive,
+        justifyContent: 'space-around',
+        borderWidth: 1,
+        minHeight: 110
+    },
+    cardTitleText: {
+        fontSize: 16,
+        color: '#fff',
+        fontWeight: '600',
+        maxWidth: '90%'
+    },
+    cardDescription: {
+        color: colors.textMuted,
+        fontSize: 14
+    },
+    bio: {
+        color: colors.textMuted,
+        fontSize: 12,
+        marginVertical: 4
     }
 });
 
+
+export const theme = {
+    dark: true,
+    colors: {
+        primary: globalStyle.text.color,
+        background: globalStyle.background.backgroundColor,
+        card: globalStyle.background.backgroundColor,
+        text: globalStyle.text.color,
+        border: globalStyle.text.color,
+        notification: globalStyle.text.color
+    }
+};

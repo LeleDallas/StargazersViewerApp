@@ -21,7 +21,9 @@ export default {
     repo: {
         getRepo: async (owner: string,) =>
             await api.post('/graphql', { query: getRepositories, variables: { username: owner } })
-                .then(res => (res.data as RepositoryResponse).data.user.repositories.nodes)
+                .then(res => (res.data as RepositoryResponse).data.user.repositories.nodes
+                    .sort((a, b) => b.stargazerCount - a.stargazerCount)
+                )
                 .catch(() => []),
         getStars: async (repoID: string) =>
             await api.post('/graphql', { query: starred, variables: { repoID } })

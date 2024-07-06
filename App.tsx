@@ -4,23 +4,12 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import MainRoute from './src/routes/MainRoute';
-import { commonStyle } from './src/styles';
+import { globalStyle, theme } from './src/styles';
 
 export default () =>
-  <SafeAreaView style={commonStyle.background} >
+  <SafeAreaView style={globalStyle.background} >
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NavigationContainer
-        theme={{
-          dark: true,
-          colors: {
-            primary: commonStyle.text.color,
-            background: commonStyle.background.backgroundColor,
-            card: commonStyle.background.backgroundColor,
-            text: commonStyle.text.color,
-            border: commonStyle.text.color,
-            notification: commonStyle.text.color
-          }
-        }}>
+      <NavigationContainer theme={theme}>
         <BottomSheetModalProvider>
           <MainRoute />
         </BottomSheetModalProvider>

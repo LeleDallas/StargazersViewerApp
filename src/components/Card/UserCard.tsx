@@ -1,11 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { commonStyle } from '../../styles';
-import { User } from '../../types/response';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { globalStyle } from '../../styles';
+import { User } from '../../types/response';
 import { RootStackParamList } from '../../types/routes';
-import RepositoryBadge from '../Badge/RepositoryBadge';
 import HasIconBadge from '../Badge/HasIconBadge';
+import RepositoryBadge from '../Badge/RepositoryBadge';
+
 type Props = {
     user: User;
 }
@@ -16,9 +17,9 @@ export default (props: Props) => {
 
     return (
         <TouchableOpacity onPress={onPress} >
-            <View style={styles.trackItemContainer}>
+            <View style={globalStyle.cardContainer}>
                 <View>
-                    <Image source={{ uri: user.avatarUrl }} style={commonStyle.image} />
+                    <Image source={{ uri: user.avatarUrl }} style={globalStyle.image} />
                 </View>
                 <View
                     style={{
@@ -31,14 +32,14 @@ export default (props: Props) => {
                     <View style={{ width: '100%' }}>
                         <Text
                             numberOfLines={1}
-                            style={styles.trackTitleText}
+                            style={globalStyle.cardTitleText}
                         >
                             {user.login}
                         </Text>
-                        <Text numberOfLines={1} style={styles.trackArtistText}>
+                        <Text numberOfLines={1} style={globalStyle.cardDescription}>
                             {user.name}
                         </Text>
-                        <Text numberOfLines={1} style={styles.bio}>
+                        <Text numberOfLines={1} style={globalStyle.bio}>
                             {user.bio}
                         </Text>
                         <View style={{
@@ -58,54 +59,3 @@ export default (props: Props) => {
     );
 };
 
-
-const styles = StyleSheet.create({
-    trackItemContainer: {
-        flexDirection: 'row',
-        columnGap: 14,
-        alignItems: 'center',
-        paddingRight: 20,
-        backgroundColor: '#1F2429',
-        margin: 8,
-        padding: 8,
-        borderRadius: 8,
-        gap: 8,
-        borderColor: '#46515B',
-        justifyContent: 'space-around',
-        borderWidth: 1,
-        minHeight: 110
-    },
-    trackPlayingIconIndicator: {
-        position: 'absolute',
-        top: 18,
-        left: 16,
-        width: 16,
-        height: 16
-    },
-    trackPausedIndicator: {
-        position: 'absolute',
-        top: 14,
-        left: 14
-    },
-    trackArtworkImage: {
-        borderRadius: 8,
-        width: 50,
-        height: 50
-    },
-    trackTitleText: {
-        fontSize: 16,
-        color: '#fff',
-        fontWeight: '600',
-        maxWidth: '90%'
-    },
-    trackArtistText: {
-        // ...defaultStyles.text,
-        color: '#9ca3af',
-        fontSize: 14
-    },
-    bio: {
-        color: '#9ca3af',
-        fontSize: 12,
-        marginVertical: 4
-    }
-});

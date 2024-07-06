@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Image, View, VirtualizedList } from 'react-native';
 import api from '../api';
 import RepositoryCard from '../components/Card/RepositoryCard';
-import { commonStyle } from '../styles';
+import { globalStyle } from '../styles';
 import { Repository, User } from '../types/response';
 
 
@@ -26,7 +26,7 @@ export default () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Image source={{ uri: user.avatarUrl }} style={commonStyle.userImage} />
+                <Image source={{ uri: user.avatarUrl }} style={globalStyle.userImage} />
             </View>
             <VirtualizedList<Repository>
                 style={{ flex: 1, marginTop: 8 }}
