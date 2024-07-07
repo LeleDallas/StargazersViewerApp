@@ -10,5 +10,12 @@ module.exports = {
     'comma-dangle': ['error', 'never'],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off'
-  }
+  },
+  overrides: [
+    {
+      // Test files only
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react']
+    }
+  ]
 };

@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx}' --modulePathIgnorePatterns='src/types' --coverageThreshold='{\"global\":{\"branches\": 80,\"functions\": 80,\"lines\": 80,\"statements\": 80}}'"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.6.3",
@@ -18,6 +18,7 @@
     "@react-navigation/native-stack": "^6.10.0",
     "@react-navigation/stack": "^6.4.0",
     "axios": "^1.7.2",
+    "jest-extended": "^4.0.2",
     "react": "18.2.0",
     "react-native": "0.74.2",
     "react-native-gesture-handler": "^2.17.1",
@@ -34,6 +35,8 @@
     "@react-native/eslint-config": "0.74.84",
     "@react-native/metro-config": "0.74.84",
     "@react-native/typescript-config": "0.74.84",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^12.5.1",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.6",
     "@types/react-native-vector-icons": "^6.4.18",
