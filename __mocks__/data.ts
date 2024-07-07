@@ -1,0 +1,46 @@
+import { User } from "../src/types/response";
+
+export const mockUsers: User[] = [
+    {
+        avatarUrl: 'https://avatars.githubusercontent.com/u/1?v=4',
+        bio: 'test bio',
+        id: '1',
+        login: 'test',
+        name: 'John Doe',
+        repositories: { totalCount: 5 },
+        followers: { totalCount: 5 },
+        isDeveloperProgramMember: true,
+        isGitHubStar: true,
+        hasSponsorsListing: true,
+        isBountyHunter: true,
+        isEmployee: true,
+    },
+    {
+        avatarUrl: 'https://avatars.githubusercontent.com/u/2?v=4',
+        bio: 'test bio',
+        id: '2',
+        login: 'test',
+        name: 'Jane Smith',
+        repositories: { totalCount: 5 },
+        followers: { totalCount: 5 },
+        isDeveloperProgramMember: true,
+        isGitHubStar: true,
+        hasSponsorsListing: true,
+        isBountyHunter: true,
+        isEmployee: true,
+    },
+    {
+        avatarUrl: 'https://avatars.githubusercontent.com/u/3?v=4',
+        bio: 'test bio',
+        id: '3',
+        login: 'test',
+        name: 'Alex Johnson',
+        repositories: { totalCount: 5 },
+        followers: { totalCount: 5 },
+        isDeveloperProgramMember: true,
+        isGitHubStar: true,
+        hasSponsorsListing: true,
+        isBountyHunter: true,
+        isEmployee: true,
+    }
+]
