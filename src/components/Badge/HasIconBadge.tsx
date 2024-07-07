@@ -21,7 +21,7 @@ export default (props: Props) => {
             paddingVertical: 4,
             gap: 8
         }}>
-            <Octicons name={name} color="#fff" size={14} />
+            <Octicons testID='badgeIcon' name={name} color="#fff" size={14} />
         </View>
     );
 };

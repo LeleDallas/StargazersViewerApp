@@ -26,9 +26,10 @@ export default () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Image source={{ uri: user.avatarUrl }} style={globalStyle.userImage} />
+                <Image testID='user-image' source={{ uri: user.avatarUrl }} style={globalStyle.userImage} />
             </View>
             <VirtualizedList<Repository>
+                testID='virtualized-list'
                 style={{ flex: 1, marginTop: 8 }}
                 data={repositories}
                 renderItem={({ item }) => <RepositoryCard repository={item} />}

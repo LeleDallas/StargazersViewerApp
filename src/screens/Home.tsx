@@ -9,8 +9,8 @@ import { User } from '../types/response';
 export default () => {
     const [name, setName] = useState('');
     const [data, setData] = useState<User[]>([]);
-    const fetchData = async () =>
-        await api.user.getAll(name).then(res => setData(res));
+
+    const fetchData = async () => await api.user.getAll(name).then(res => setData(res));
 
     return (
         <>
@@ -20,9 +20,10 @@ export default () => {
                     placeholder="Search a GitHub user"
                     inputMode="text"
                     style={globalStyle.textInput}
-                    onChange={(e) => { setName(e.nativeEvent.text); }}
+                    onChange={(e) => setName(e.nativeEvent.text)}
                 />
                 <TouchableOpacity
+                    testID='touchable-opacity'
                     disabled={name.length === 0}
                     onPress={fetchData}
                     style={[globalStyle.searchButton, {

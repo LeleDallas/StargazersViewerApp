@@ -4,9 +4,11 @@ import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { Repository } from '../../types/response';
 import StarBottomSheet from '../StarBottomSheet';
 import { globalStyle } from '../../styles';
+
 type Props = {
     repository: Repository;
 }
+
 export default (props: Props) => {
     const { repository } = props;
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
