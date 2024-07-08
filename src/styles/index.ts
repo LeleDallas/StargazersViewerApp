@@ -9,14 +9,6 @@ export const colors = {
     buttonInactive: '#46515B'
 };
 
-export const fontSize = {
-    xs: 12,
-    sm: 16,
-    base: 20,
-    lg: 24
-};
-
-
 export const globalStyle = StyleSheet.create({
     background: {
         backgroundColor: colors.background,

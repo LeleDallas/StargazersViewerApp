@@ -9,8 +9,13 @@ import { User } from '../types/response';
 export default () => {
     const [name, setName] = useState('');
     const [data, setData] = useState<User[]>([]);
+    const [loading, setLoading] = useState(false);
 
-    const fetchData = async () => await api.user.getAll(name).then(res => setData(res));
+    const fetchData = async () => {
+        setLoading(true);
+        await api.user.getAll(name).then(res => setData(res)
+        ).finally(() => setLoading(false))
+    };
 
     return (
         <>
@@ -32,7 +37,7 @@ export default () => {
                     <Octicons name="search" color={colors.text} size={20} />
                 </TouchableOpacity>
             </View>
-            <UserList users={data} />
+            <UserList users={data} loading={loading} />
         </>
     );
 };

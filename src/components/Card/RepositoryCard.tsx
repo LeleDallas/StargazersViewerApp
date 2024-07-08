@@ -1,9 +1,10 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { useCallback, useRef, useState } from 'react';
 import { Alert, Text, TouchableOpacity, View } from 'react-native';
-import { Repository } from '../../types/response';
-import StarBottomSheet from '../StarBottomSheet';
 import { globalStyle } from '../../styles';
+import { Repository } from '../../types/response';
+import RepoBadgeList from '../Badge/RepoBadgeList';
+import StarBottomSheet from '../StarBottomSheet';
 
 type Props = {
     repository: Repository;
@@ -36,27 +37,13 @@ export default (props: Props) => {
                     }}
                 >
                     <View style={{ width: '100%' }}>
-                        <Text
-                            numberOfLines={1}
-                            style={globalStyle.cardTitleText}
-                        >
+                        <Text numberOfLines={1} style={globalStyle.cardTitleText}>
                             {repository.name}
                         </Text>
                         <Text numberOfLines={1} style={globalStyle.cardDescription}>
                             {repository.description}
                         </Text>
-                        <Text numberOfLines={1} style={globalStyle.bio}>
-                            {repository.forkCount}
-                        </Text>
-                        <Text numberOfLines={1} style={globalStyle.bio}>
-                            {repository.stargazerCount}
-                        </Text>
-                        <View style={{
-                            flexDirection: 'row', gap: 8, flexWrap: 'wrap', alignContent: 'center',
-                            justifyContent: 'flex-start'
-                        }}>
-                            {/* <RepositoryBadge count={repository.repositories?.totalCount ?? 0} /> */}
-                        </View>
+                        <RepoBadgeList repository={repository} />
                     </View>
                 </View>
             </View>
