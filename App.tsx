@@ -9,7 +9,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 export default () => {
   
-  useEffect(() => SplashScreen.hide(), []);
+  useEffect(() => SplashScreen?.hide(), []);
 
   return <SafeAreaView style={globalStyle.background} >
     <GestureHandlerRootView style={{ flex: 1 }}>
