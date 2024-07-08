@@ -1,24 +1,24 @@
-type User = {
+export type User = {
     login: string;
     name: string | null;
     id: string;
     avatarUrl: string;
     followers: {
-        totalCount: number;
+        totalCount?: number;
     };
     hasSponsorsListing: boolean;
     isBountyHunter: boolean;
-    isCampusExpert: boolean;
     isDeveloperProgramMember: boolean;
     isEmployee: boolean;
     isGitHubStar: boolean;
     bio: string | null;
     repositories: {
-        totalCount: number;
+        totalCount?: number;
     };
 };
 
-type Repository = {
+export type Repository = {
+    id: string;
     name: string;
     description: string | null;
     url: string;
@@ -32,6 +32,10 @@ type Repository = {
         color: string;
     };
 }
+
+export type Starred = {
+    node: User;
+};
 
 
 
@@ -47,7 +51,19 @@ export type UsersResponse = {
 export type RepositoryResponse = {
     data: {
         user: {
-            repositories: Repository[]
+            repositories: {
+                nodes: Repository[]
+            }
         }
     }
-} 
+}
+
+export type StarredResponse = {
+    data: {
+        node: {
+            stargazers: {
+                edges: Starred[]
+            }
+        }
+    }
+}

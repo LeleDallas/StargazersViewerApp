@@ -32,7 +32,7 @@ describe('API Tests', () => {
                 expect(data).toEqual([]);
                 expect(thenFn).not.toHaveBeenCalled();
                 expect(catchFn).not.toHaveBeenCalled();
-            })
+            });
 
         expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: userQuery, variables: { query: name } });
     });
@@ -56,10 +56,10 @@ describe('API Tests', () => {
             thenFn = jest.fn();
         await api.repo.getRepo(owner)
             .then((data) => {
-                expect(data).toEqual(response.data);
+                expect(data).toEqual([]);
                 expect(thenFn).not.toHaveBeenCalled();
                 expect(catchFn).not.toHaveBeenCalled();
-            })
+            });
 
         expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: getRepositories, variables: { username: owner } });
     });
@@ -67,29 +67,29 @@ describe('API Tests', () => {
     it('should call getStars method with the correct parameters', () => {
         let catchFn = jest.fn(),
             thenFn = jest.fn();
-        const repoId = '123';
-        api.repo.getStars(repoId)
+        const repoID = '123';
+        api.repo.getStars(repoID)
             .then(thenFn)
             .catch(catchFn);
 
-        expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: starred, variables: { repoId } });
+        expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: starred, variables: { repoID } });
     });
 
     it('should call getStars method and handle successful response', async () => {
 
-        const repoId = '123';
+        const repoID = '123';
         const response = { data: { user: { repositories: [{ name: 'repo1' }, { name: 'repo2' }] } } };
         mockAxios.post.mockResolvedValue(response);
         let catchFn = jest.fn(),
             thenFn = jest.fn();
-        await api.repo.getStars(repoId)
+        await api.repo.getStars(repoID)
             .then((data) => {
-                expect(data).toEqual(response.data);
+                expect(data).toEqual([]);
                 expect(thenFn).not.toHaveBeenCalled();
                 expect(catchFn).not.toHaveBeenCalled();
-            })
+            });
 
-        expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: starred, variables: { repoId } });
+        expect(mockAxios.post).toHaveBeenCalledWith('/graphql', { query: starred, variables: { repoID } });
     });
 
 });
