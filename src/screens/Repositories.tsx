@@ -36,7 +36,7 @@ export default () => {
                 <UserText user={user} />
                 <UserBadgeList user={user} />
             </View>
-            <RepoList repositories={repositories} loading={repositories.length === 0} />
+            <RepoList repositories={repositories} loading={loading} />
         </>
     );
 };
