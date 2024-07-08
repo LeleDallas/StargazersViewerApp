@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 
 type Props = {
-    count: number;
+    count?: number;
 }
 
 export default ({ count }: Props) => {
@@ -19,7 +19,7 @@ export default ({ count }: Props) => {
             gap: 8
         }}>
             <Octicons name="repo" color="#fff" size={14} />
-            <Text style={{ color: '#fff' }}>{count}</Text>
+            <Text style={{ color: '#fff', fontSize: 12 }}>{count ?? 0}</Text>
         </View>
     );
 };
