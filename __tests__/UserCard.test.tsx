@@ -7,13 +7,13 @@ import UserCard from '../src/components/Card/UserCard';
 describe('UserCard', () => {
 
     it('renders user information correctly', () => {
-        const { getByText } = render(
+        const { getAllByText } = render(
             <NavigationContainer>
                 <UserCard user={mockUsers[0]} />
             </NavigationContainer>
         );
 
-        expect(getByText('5')).toBeTruthy();
+        expect(getAllByText('5')).toBeTruthy();
     });
 
     it('shows 0 when repositories count is not available', () => {

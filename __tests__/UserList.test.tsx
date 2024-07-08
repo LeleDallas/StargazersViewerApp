@@ -8,12 +8,21 @@ import { mockUsers } from '../__mocks__/data';
 describe('UserList component', () => {
     it('renders user list correctly', () => {
         const { getByText } = render(
-            <NavigationContainer> 
-                <UserList users={mockUsers} />
+            <NavigationContainer>
+                <UserList users={mockUsers} loading={false} />
             </NavigationContainer>
         );
         expect(getByText('John Doe')).toBeTruthy();
         expect(getByText('Jane Smith')).toBeTruthy();
         expect(getByText('Alex Johnson')).toBeTruthy();
+    })
+
+    it('renders loading', () => {
+        const { queryByText } = render(
+            <NavigationContainer>
+                <UserList users={mockUsers} loading />
+            </NavigationContainer>
+        );
+        expect(queryByText('John Doe')).toBeNull();
     })
 });

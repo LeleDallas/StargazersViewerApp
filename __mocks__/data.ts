@@ -1,4 +1,4 @@
-import { User } from "../src/types/response";
+import { Repository, User } from "../src/types/response";
 
 export const mockUsers: User[] = [
     {
@@ -42,5 +42,38 @@ export const mockUsers: User[] = [
         hasSponsorsListing: true,
         isBountyHunter: true,
         isEmployee: true,
+    }
+]
+
+export const mockRepositories: Repository[] = [
+    {
+        id: '1',
+        name: 'repo1',
+        description: 'test description',
+        stargazerCount: 5,
+        forkCount: 5,
+        primaryLanguage: { name: 'JavaScript', color: '#f1e05a' },
+        stargazers: { totalCount: 5 },
+        url: ''
+    },
+    {
+        id: '2',
+        name: 'repo2',
+        description: 'test description',
+        stargazerCount: 5,
+        forkCount: 5,
+        primaryLanguage: { name: 'JavaScript', color: '#f1e05a' },
+        stargazers: { totalCount: 5 },
+        url: ''
+    },
+    {
+        id: '3',
+        name: 'repo3',
+        description: 'test description',
+        stargazerCount: 5,
+        forkCount: 5,
+        primaryLanguage: { name: 'JavaScript', color: '#f1e05a' },
+        stargazers: { totalCount: 5 },
+        url: ''
     }
 ]

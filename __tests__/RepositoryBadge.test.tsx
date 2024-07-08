@@ -9,4 +9,11 @@ describe('RepositoryBadge', () => {
         );
         expect(getByText('5')).toBeTruthy();
     });
+
+    it('renders the correct count when count is zero', () => {
+        const { getByText } = render(
+            <RepositoryBadge />
+        );
+        expect(getByText('0')).toBeTruthy();
+    });
 });

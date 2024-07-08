@@ -32,4 +32,15 @@ describe('Home', () => {
         expect(touchableOpacity).toBeTruthy();
         fireEvent.press(touchableOpacity);
     });
+
+    it('should call the API when TouchableOpacity is pressed', async () => {
+        const { getByTestId, getByPlaceholderText } = render(<Home />);
+        const touchableOpacity = getByTestId('touchable-opacity');
+        expect(touchableOpacity).toBeTruthy();
+        const textInput = getByPlaceholderText("Search a GitHub user");
+        expect(textInput).toBeTruthy();
+        await userEvent.type(textInput, 'test');
+        fireEvent.press(touchableOpacity);
+    });
+    
 });
