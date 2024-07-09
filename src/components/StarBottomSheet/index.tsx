@@ -28,7 +28,6 @@ export default (props: Props) => {
         return () => { };
     }, [repositoryId]);
 
-
     return (
         <BottomSheetModal
             ref={bottomSheetModalRef}
@@ -59,7 +58,7 @@ export default (props: Props) => {
                         keyExtractor={(i) => i.node.id}
                         getItemCount={(data) => data.length}
                         getItem={(data, index) => data[index]}
-                        renderItem={({ item }) => <UserCard user={item.node} />}
+                        renderItem={({ item }) => <UserCard user={item.node} close={() => bottomSheetModalRef.current?.close()} />}
                     />
                 </>
             }

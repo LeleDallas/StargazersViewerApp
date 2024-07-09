@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { StackActions, useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { globalStyle } from '../../styles';
@@ -11,11 +11,17 @@ import UserText from '../Text/UserText';
 
 type Props = {
     user: User;
+    close?: () => void;
 }
 export default (props: Props) => {
-    const { user } = props;
+    const { user, close } = props;
     const navigation = useNavigation<NativeStackScreenProps<RootStackParamList>['navigation']>();
-    const onPress = () => navigation.navigate('Repositories', { user });
+    const pushAction = StackActions.push('Repositories', { user });
+
+    const onPress = () => {
+        close && close();
+        navigation.dispatch(pushAction)
+    };
 
     return (
         <TouchableOpacity onPress={onPress} >

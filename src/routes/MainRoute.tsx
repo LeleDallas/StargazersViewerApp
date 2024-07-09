@@ -18,7 +18,7 @@ export default () => {
                 component={Repositories}
                 options={({ route }) => ({
                     headerTitle: `${route.params.user.login}'s repositories`,
-                    headerBackTitleVisible: false
+                    headerBackTitleVisible: false,
                 })}
             />
         </Stack.Navigator>

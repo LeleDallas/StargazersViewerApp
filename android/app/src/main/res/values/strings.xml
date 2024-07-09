@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StargazersViewer</string>
+    <string name="loader">loader</string>
 </resources>
