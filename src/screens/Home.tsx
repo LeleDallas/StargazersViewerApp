@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import api from '../api';
 import UserList from '../components/List/UserList';
 import { colors, globalStyle } from '../styles';
 import { User } from '../types/response';
+import NoData from '../components/NoData';
 
 export default () => {
     const [name, setName] = useState('');
@@ -37,6 +38,7 @@ export default () => {
                     <Octicons name="search" color={colors.text} size={20} />
                 </TouchableOpacity>
             </View>
+            <NoData length={data.length} loading={loading} />
             <UserList users={data} loading={loading} />
         </>
     );
