@@ -1,79 +1,80 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<p align="center"> 
+  <img alt="Screenshot 2023-03-06 alle 11 32 00" src="https://github.com/LeleDallas/StargazersViewerApp/assets/71103219/88c8b6e3-3b1c-41f2-8260-c9cc221170fb" height="auto" width="auto" style="border-radius:100%" >
+</p>
 
-# Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+<h1 align="center">Stargazers Viewer App ⭐️</h1>
+<p align="center">
+  <a href="https://go-skill-icons.vercel.app/">
+       <img src="https://go-skill-icons.vercel.app/api/icons?i=ts,react,androidstudio,xcode,graphql,github" />
+  </a>
+</p>
 
-## Step 1: Start the Metro Server
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=LeleDallas_StargazersViewerApp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=LeleDallas_StargazersViewerApp)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents"> :book: Table of Contents</h2>
 
-To start Metro, run the following command from the _root_ of your React Native project:
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project"> ➤ About The Project</a></li>
+    <li><a href="#getting-started"> ➤ Getting Started</a></li>
+    <li><a href="#authors"> ➤ Authors</a></li>
+  </ol>
+</details>
 
-```bash
-# using npm
-npm start
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# OR using Yarn
-yarn start
-```
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project"> :pencil: About The Project</h2>
 
-## Step 2: Start your Application
+<p align="justify"> 
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+StarGazers Viewer App is a mobile application that allows you to search for a GitHub user and it's repository and view its stargazers. 
+Built using React Native and TypeScript, the application uses the GitHub API with graphql to fetch the stargazers of a repository.
 
-### For Android
+</p>
 
-```bash
-# using npm
-npm run android
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# OR using Yarn
-yarn android
-```
+<!-- GETTING STARTED -->
+<h2 id="getting-started"> :book: Getting Started</h2>
 
-### For iOS
+Via GitHub Desktop clone this repository then to run the app, you need to have Node.js `v20.12.2` or higher installed on your system and Android Studio or XCode installed in your system.
 
-```bash
-# using npm
-npm run ios
+> [!WARNING]  
+> To run this project locally you need to create an `.env` file in the root of the project directory with following variables:
+> ``` bash
+> API_URL = https://api.github.com
+> API_KEY = ${YOUR_GITHUB_TOKEN}
+> ```
+> You can create a personal Github token [here](https://github.com/settings/tokens?type=beta). Make sure to add `Read access to followers, starring, and watching` as permission. 
 
-# OR using Yarn
-yarn ios
-```
+To run it locally, follow these steps:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+- Navigate to the project folder.
+- Run the command `npm install` to install all the necessary dependencies.
+- On ios, `cd ios && pod install && cd..`
+- Run the command `npx react-native start` to start the app. From the cli now select the system to run.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+The app will install in your emulator/device.
 
-## Step 3: Modifying your App
 
-Now that you have successfully run the app, let's modify it.
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+<!-- Authors -->
+<h2 id="authors"> :scroll: Authors</h2>
 
-## Congratulations! :tada:
+Emanuele Dall'Ara
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LeleDallas)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emanuele-dall-ara-40b3311a7/)
