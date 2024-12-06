@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/LeleDallas/StargazersViewerApp/compare/v1.0.0...v1.0.1) (2024-12-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to v1.7.9 ([11770ee](https://github.com/LeleDallas/StargazersViewerApp/commit/11770ee88e1bc5001c926967f5d405de4313efbc))
+
 ## 1.0.0 (2024-07-09)
 
 
