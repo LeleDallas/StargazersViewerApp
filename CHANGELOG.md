@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.1](https://github.com/LeleDallas/StargazersViewerApp/compare/v1.0.0...v1.0.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @gorhom/bottom-sheet to v4.6.4 ([e797cb8](https://github.com/LeleDallas/StargazersViewerApp/commit/e797cb8c559dc35ba2cb85c7687a2149c750e00b))
+* **deps:** update dependency @gorhom/bottom-sheet to v4.6.4 ([ba2feb4](https://github.com/LeleDallas/StargazersViewerApp/commit/ba2feb483997ab05c458cd12bea179e1134ff386))
+* **deps:** update dependency axios to v1.7.9 ([ea1bd8c](https://github.com/LeleDallas/StargazersViewerApp/commit/ea1bd8c4dd359229e82b47713b3c53ad55bf39d0))
+* **deps:** update dependency axios to v1.7.9 ([11770ee](https://github.com/LeleDallas/StargazersViewerApp/commit/11770ee88e1bc5001c926967f5d405de4313efbc))
+* **deps:** update react-navigation monorepo ([8513775](https://github.com/LeleDallas/StargazersViewerApp/commit/85137755886f64b7f69a8794386fc3a34d3f3ae5))
+* **deps:** update react-navigation monorepo ([d2e9790](https://github.com/LeleDallas/StargazersViewerApp/commit/d2e9790102e13078ae400fac9fcea8bf79f92bd1))
+
 ## 1.0.0 (2024-07-09)
 
 
